@@ -34,6 +34,20 @@ UserInputService.InputEnded:Connect(function(input, gameProcessed)
         end
     end
 end)
+-- // v2
+local UserInputService2 = game:GetService("UserInputService")
+
+UserInputService2.InputEnded:Connect(function(input, gameProcessed)
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        local keyPressed = input.KeyCode
+        if keyPressed.Name == 'X' then
+            ShowFOV = false
+        end
+        if keyPressed.Name == 'Z' then
+            ShowFOV = true
+        end
+    end
+end)
 -- // Hook
 mt.__index = newcclosure(function(t, k)
     if (t:IsA("Mouse") and (k == "Hit")) then
