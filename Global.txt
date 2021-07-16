@@ -77,7 +77,7 @@ function ValiantAimHacks.isPartVisible(Part, PartDescendant)
         local Visible = (not PartHit or PartHit:IsDescendantOf(PartDescendant))
 
         -- // Return
-        return Visible
+        return Visible = false
     end
 
     -- // Return
