@@ -34,7 +34,7 @@ getgenv().ValiantAimHacks = {
 
 -- // Show FOV
 local circle = Drawing.new("Circle")
-circle.Transparency = 100
+circle.Transparency = 50
 circle.Thickness = 2
 circle.Color = Color3.fromRGB(231, 84, 128)
 circle.NumSides = 12
@@ -56,6 +56,32 @@ calcChance = function(percentage)
     percentage = math.floor(percentage)
     local chance = math.floor(Random.new().NextNumber(Random.new(), 0, 1) * 100) / 100
     return chance <= percentage/100
+end
+
+-- // Customisable Checking Functions: Is a part visible
+function ValiantAimHacks.isPartVisible(Part, PartDescendant)
+    -- // Vars
+    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local Origin = CurrentCamera.CFrame.Position
+    local _, OnScreen = CurrentCamera:WorldToViewportPoint(Part.Position)
+
+    -- // If Part is on the screen
+    if (OnScreen) then
+        -- // Vars: Calculating if is visible
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+        raycastParams.FilterDescendantsInstances = {Character, CurrentCamera}
+
+        local Result = Workspace:Raycast(Origin, Part.Position - Origin, raycastParams)
+        local PartHit = Result.Instance
+        local Visible = (not PartHit or PartHit:IsDescendantOf(PartDescendant))
+
+        -- // Return
+        return Visible
+    end
+
+    -- // Return
+    return false
 end
 
 -- // Check teams
