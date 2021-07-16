@@ -58,32 +58,6 @@ calcChance = function(percentage)
     return chance <= percentage/100
 end
 
--- // Customisable Checking Functions: Is a part visible
-function ValiantAimHacks.isPartVisible(Part, PartDescendant)
-    -- // Vars
-    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
-    local Origin = CurrentCamera.CFrame.Position
-    local _, OnScreen = CurrentCamera:WorldToViewportPoint(Part.Position)
-
-    -- // If Part is on the screen
-    if (OnScreen) then
-        -- // Vars: Calculating if is visible
-        local raycastParams = RaycastParams.new()
-        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
-        raycastParams.FilterDescendantsInstances = {Character, CurrentCamera}
-
-        local Result = Workspace:Raycast(Origin, Part.Position - Origin, raycastParams)
-        local PartHit = Result.Instance
-        local Visible = (not PartHit or PartHit:IsDescendantOf(PartDescendant))
-
-        -- // Return
-        return Visible
-    end
-
-    -- // Return
-    return false
-end
-
 -- // Check teams
 function ValiantAimHacks.checkTeam(targetPlayerA, targetPlayerB)
     -- // If player is not on your team
@@ -291,6 +265,3 @@ end)
 -- // Revert Metatable readonly status
 setreadonly(mt, true)
 ]]
-
--- // turn off
-Visible = false
