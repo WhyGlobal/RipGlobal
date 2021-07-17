@@ -18,7 +18,7 @@ getgenv().ValiantAimHacks = {
     ShowFOV = true,
     VisibleCheck = true,
     TeamCheck = true,
-    FOV = 20,
+    FOV = 15,
     HitChance = 100,
     Selected = LocalPlayer,
     TargetPart = "Head",
@@ -43,7 +43,7 @@ function ValiantAimHacks.updateCircle()
     if (circle) then
         -- // Set Circle Properties
         circle.Visible = ValiantAimHacks.ShowFOV
-        circle.Radius = (ValiantAimHacks.FOV * 3)
+        circle.Radius = (ValiantAimHacks.FOV * 1)
         circle.Position = Vector2.new(Mouse.X, Mouse.Y + GuiService:GetGuiInset().Y)
 
         -- // Return circle
