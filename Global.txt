@@ -21,7 +21,7 @@ getgenv().ValiantAimHacks = {
     FOV = 49,
     HitChance = 96,
     Selected = LocalPlayer,
-    TargetPart = "Torso",
+    TargetPart = "Head",
     BlacklistedTeams = {
         {
             Team = LocalPlayer.Team,
@@ -280,7 +280,7 @@ mt.__index = newcclosure(function(t, k)
             local Character = ValiantAimHacks.getCharacter(CPlayer) -- // good practice to use this to get the character
 
             -- // Return modded val
-            return (k == "Hit" and Character.Torso.CFrame or Character.Torso)
+            return (k == "Hit" and Character.Head.CFrame or Character.Head)
         end
     end
 
