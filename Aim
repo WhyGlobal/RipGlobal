@@ -40,8 +40,8 @@ mt.__index = newcclosure(function(t, k)
         print(t, k)
         local CPlayer = SilentAim.Selected
         if (SilentAim.checkSilentAim()) and _G.SAEnabled then
-            if (CPlayer.Character:FindFirstChild("Torso")) then
-                return {p=(CPlayer.Character.Torso.CFrame.p+(CPlayer.Character.Torso.Velocity*accomidationfactor))}
+            if (CPlayer.Character:FindFirstChild("Head")) then
+                return {p=(CPlayer.Character.Head.CFrame.p+(CPlayer.Character.Head.Velocity*accomidationfactor))}
             end
         end
     end
