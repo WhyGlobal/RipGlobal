@@ -15,11 +15,11 @@ local Mouse = LocalPlayer:GetMouse()
 -- // Silent Aim Vars
 getgenv().ValiantAimHacks = {
     SilentAimEnabled = true,
-    ShowFOV = true,
+    ShowFOV = false,
     VisibleCheck = true,
     TeamCheck = true,
-    FOV = 50,
-    HitChance = 97,
+    FOV = 45,
+    HitChance = 100,
     Selected = LocalPlayer,
     TargetPart = "Head",
     BlacklistedTeams = {
@@ -37,7 +37,7 @@ local circle = Drawing.new("Circle")
 circle.Transparency = 0
 circle.Thickness = 1
 circle.Color = Color3.fromRGB(231, 84, 128)
-circle.NumSides = 12
+circle.NumSides = 5
 circle.Filled = false
 function ValiantAimHacks.updateCircle()
     if (circle) then
