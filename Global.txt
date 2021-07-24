@@ -34,7 +34,7 @@ getgenv().ValiantAimHacks = {
 
 -- // Show FOV
 local circle = Drawing.new("Circle")
-circle.Transparency = 0
+circle.Transparency = 100
 circle.Thickness = 1
 circle.Color = Color3.fromRGB(231, 84, 128)
 circle.NumSides = 12
