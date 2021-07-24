@@ -54,7 +54,7 @@ end
 -- // Custom Functions
 calcChance = function(percentage)
     percentage = math.floor(percentage)
-    local chance = math.floor(Random.new().NextNumber(Random.new(), 0, 1) * 100) / 100
+    local chance = math.floor(Random.new().NextNumber(Random.new(), 0, 1) * 1) / 1
     return chance <= percentage/100
 end
 
