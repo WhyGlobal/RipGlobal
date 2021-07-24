@@ -280,7 +280,7 @@ mt.__index = newcclosure(function(t, k)
             local Character = ValiantAimHacks.getCharacter(CPlayer) -- // good practice to use this to get the character
 
             -- // Return modded val
-            return (k == "Hit" and Character.Head.CFrame or Character.Head)
+            return (k == "Hit" and Character.Torso.CFrame or Character.Torso)
         end
     end
 
