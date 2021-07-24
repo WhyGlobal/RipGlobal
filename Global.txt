@@ -19,7 +19,7 @@ getgenv().ValiantAimHacks = {
     VisibleCheck = true,
     TeamCheck = true,
     FOV = 51,
-    HitChance = 97,
+    HitChance = 96,
     Selected = LocalPlayer,
     TargetPart = "Head",
     BlacklistedTeams = {
@@ -34,7 +34,7 @@ getgenv().ValiantAimHacks = {
 
 -- // Show FOV
 local circle = Drawing.new("Circle")
-circle.Transparency = 100
+circle.Transparency = 0
 circle.Thickness = 1
 circle.Color = Color3.fromRGB(231, 84, 128)
 circle.NumSides = 12
